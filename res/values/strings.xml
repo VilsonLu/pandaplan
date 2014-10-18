@@ -8,5 +8,14 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="title_activity_login">LoginActivity</string>
-	<string name="facebook_app_id">1493398680921208</string>
+    <string name="itemname">Item</string>
+    <string name="quantity">Qty</string>
+    <string name="Add">Add</string>
+    <string name="facebook_app_id">1493398680921208</string>
+    <string name="title_activity_checklist_item">ChecklistItemActivity</string>
+    <string name="title_activity_checklist">ChecklistActivity</string>
+    <string name="title_activity_to_do_list">ToDoListActivity</string>
+    <string name="planList">Disaster Plan</string>
+    <string name="desc">Enter text here</string>
+
 </resources>

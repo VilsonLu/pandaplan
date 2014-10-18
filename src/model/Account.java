@@ -1,6 +1,12 @@
 package model;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String id;
 	private String username;
 	private String password;
@@ -23,6 +29,12 @@ public class Account {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	
+	 @Override
+    public String toString() {
+        return "Account [id=" + id + ", username=" + username + "]";
+    }   
 	
 	
 }

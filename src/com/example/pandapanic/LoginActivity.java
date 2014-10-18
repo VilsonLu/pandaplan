@@ -15,6 +15,7 @@ import database.DbConnection;
 import model.Account;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
@@ -50,6 +51,25 @@ public class LoginActivity extends Activity {
 		loginButton = (Button) findViewById(R.id.Login);
 		loginButton.setOnClickListener(new loginListener());
 		mClient = DbConnection.connectToAzureService(this);
+		
+		Account account = new Account();
+		account.setUsername("kevinrivera");
+		account.setPassword("123456");
+		
+		mClient.getTable(Account.class).insert(account, new TableOperationCallback<Account>(){
+
+			@Override
+			public void onCompleted(Account arg0, Exception arg1,
+					ServiceFilterResponse arg2) {
+				// TODO Auto-generated method stub
+				if(arg1 == null){
+					Log.e("Message","Success");
+				} else {
+					Log.e("Message","Fail");
+				}
+			}
+			
+		});
 
 	}
 
@@ -97,8 +117,10 @@ public class LoginActivity extends Activity {
 								} else {
 									Log.e("Login","Success");
 									user = account.get(0);
-									Log.e("Login",user.getUsername());
-									
+									Log.e("Login",user.getId());
+									Intent i = new Intent(getApplicationContext(),ToDoListActivity.class);
+									i.putExtra("user", user);
+									startActivity(i);
 								}
 
 							} else {
