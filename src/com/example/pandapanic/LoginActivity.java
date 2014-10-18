@@ -52,25 +52,6 @@ public class LoginActivity extends Activity {
 		loginButton.setOnClickListener(new loginListener());
 		mClient = DbConnection.connectToAzureService(this);
 		
-		Account account = new Account();
-		account.setUsername("kevinrivera");
-		account.setPassword("123456");
-		
-		mClient.getTable(Account.class).insert(account, new TableOperationCallback<Account>(){
-
-			@Override
-			public void onCompleted(Account arg0, Exception arg1,
-					ServiceFilterResponse arg2) {
-				// TODO Auto-generated method stub
-				if(arg1 == null){
-					Log.e("Message","Success");
-				} else {
-					Log.e("Message","Fail");
-				}
-			}
-			
-		});
-
 	}
 
 	@Override
@@ -118,7 +99,7 @@ public class LoginActivity extends Activity {
 									Log.e("Login","Success");
 									user = account.get(0);
 									Log.e("Login",user.getId());
-									Intent i = new Intent(getApplicationContext(),ToDoListActivity.class);
+									Intent i = new Intent(getApplicationContext(),MenuActivity.class);
 									i.putExtra("user", user);
 									startActivity(i);
 								}
