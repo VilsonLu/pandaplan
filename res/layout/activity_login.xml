@@ -39,7 +39,7 @@
         android:id="@+id/txtPassword"
         android:layout_width="fill_parent"
         android:layout_height="70dp"
-        android:textSize="40dp"
+        android:textSize="40sp"
         android:layout_marginTop="20dp"
         android:background="#fbf5e4"
         android:ems="10"

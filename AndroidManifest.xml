@@ -23,6 +23,7 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu" >
+             
         </activity>
         <activity
             android:name=".LoginActivity"
@@ -32,6 +33,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+           
         </activity>
 
         <meta-data
@@ -41,6 +43,7 @@
         <activity
             android:name=".ChecklistActivity"
             android:label="@string/title_activity_checklist" >
+            
         </activity>
         
         <activity
